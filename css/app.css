@@ -51,28 +51,36 @@
 				border-radius: 10px 10px 10px 10px;
 				height: 250px;
 				padding: 5px;
+				margin: 0px;
 				display: flex;
 				flex-direction: column;
 				text-align: center;
+				
 			}
 
 				.pista{
 					background-color:#fFC38B;
 					flex: 2 1 auto;
-					font-size:30px;
+					font-size: 20px;
+					font-family: 'Gudea', sans-serif;
 				}
 				.intentos{
 					background-color: #fFC38B;
 					flex: 1 1 auto;
+					font-size: 25px;
+					font-family: 'Gudea', sans-serif;
 				}
 				.puntos{
 					background-color: #fFC38B;
 					flex: 1 1 auto;
+					font-size: 20px;
+					font-family: 'Gudea', sans-serif;
 				}
 				.palabra{
 					background-color: #fFC38B;
 					flex: 2 1 auto;
-					font-size: 35px;
+					font-size: 30px;
+					font-family: 'Gudea', sans-serif;
 				}
 
 			.teclado{
@@ -86,7 +94,7 @@
 					border: 1px outset #4d3e3e;
 					border-radius: 5px;
 					color:black;
-					font-family: 'Arial narrow', cursive;
+					font-family: 'Ubuntu Condensed', sans-serif;
 					font-size: 20px;
 					margin: 0.5%;
 					width: 50px;
@@ -109,7 +117,7 @@
 		padding: 10px;
 		width: 200px;
 		font-size: 20px;
-		font-family: 'Arial narrow', cursive;
+		font-family: 'Ubuntu Condensed', sans-serif;
 	}
 
 .teclaDeshabilitada{
@@ -123,4 +131,5 @@
 	width: 50px;
 	height: 50px;
 }
+
 
