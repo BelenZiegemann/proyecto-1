@@ -6,6 +6,7 @@
     <title>Proyecto 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/emergente.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Pavanam&display=swap" rel="stylesheet">
@@ -61,6 +62,30 @@
                 </div>
             </div>
         </section>
+        <div id="emergente"></div>
+        <div id= "instrucciones">
+            <h1>INSTRUCCIONES</h1>
+             <p>Dispones de 5 intentos para acertar la palabra oculta.</p>
+             <p>Las teclas se iran deshabilitando segun sean presionadas.</p>
+             <p>
+             En todo momento puedes darle al botón "Reiniciar" para empezar una nueva partida, al igual que cuando
+             ganes tienes que pulsar el botón "Siguiente".
+            </p>
+             <p>
+             En caso de que le des a "Reiniciar" tu puntuación se restablecerá.
+             </p>
+             <button class="boton" onclick="cerrarInstrucciones();">Cerrar</button>
+        </div>
+        <div id="partida">
+            <h1>Guardar partida</h1>
+            <p>Si desea guardar la partida, debera ingresar un nombre</p>
+            <form class = "form" id= "form">
+                <input type="text" id="name" name="username" placeholder= "Nombre" required><br>
+                <button type= "submit" class="boton" id= "hecho">Guardar partida</button>
+            </form>
+            <button class="boton" onclick="cerrarGuardar();">Cerrar</button>
+            
+        </div>
         <footer class="footer">
             <div>
                 <button class="boton" onclick="abrirInstrucciones();">Instrucciones</button>
@@ -69,11 +94,12 @@
                 <button class="boton" id="BotonReiniciar" onclick="reiniciarPartida();">Reiniciar</button>
             </div>
             <div>
-                <button class="boton" onclick="guardarPartida();">Guardar</button>
+                <button class="boton" onclick="abrirGuardar();">Guardar</button>
             </div>
         </footer>
     </div>
     <script src="js/palabras.js"></script>
+    <script src="js/emergente.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

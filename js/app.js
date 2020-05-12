@@ -4,7 +4,7 @@ de Aplicaciones Web. Universidad Nacional del Sur.
 */ 
 
 let puntuacion = 0; 
-let numIntentos = 6;
+let numIntentos = 5;
 let numIntentosTotales= numIntentos;
 let palabraAdivinar = [];
 let palabraMostrar = [];
@@ -15,11 +15,16 @@ let intentos = document.querySelector('#intentos');
 let intentosOriginales= document.querySelector('#intentosOriginales');
 let puntuacionH2 = document.querySelector('#puntuacionH2');
 let botonReiniciar = document.querySelector('#BotonReiniciar');
+const formUI = document.getElementById('form');
+let partidas = [];
+
+
 
 function iniciarPartida(){
   
   var posicionAleatoria = Math.floor(Math.random() * listaPalabras.length);
   var palabra = listaPalabras[posicionAleatoria];
+  console.log(palabra);
   var tamanioPalabra = palabra.length;
   for (var i=0; i<tamanioPalabra;i ++){
     if (palabra.charAt(i).match(/[a-zñA-ZÑ]/)){
@@ -31,6 +36,7 @@ function iniciarPartida(){
       palabraMostrar.push(palabra.charAt(i));
     }
   }
+  console.log(palabraMostrar);
 
   pista.textContent = listaPistas[posicionAleatoria];
   intentosOriginales.textContent = numIntentosTotales;
@@ -72,18 +78,22 @@ function comprobarTecla(letraUsuario){
       puntuacion -= 15;
     }
     
-    if (numIntentos == 5) {
-      document.getElementById('imagen').src = 'img/cabeza.png';
-    } else if (numIntentos == 4) {
-      document.getElementById('imagen').src = 'img/cuerpo.png';
-    } else if (numIntentos == 3) {
-      document.getElementById('imagen').src = 'img/piernas.png';
-    } else if (numIntentos == 2) {
-      document.getElementById('imagen').src = 'img/brazos.png';
-    } else if (numIntentos == 1) {
-      document.getElementById('imagen').src = 'img/ahorcado.png';
-    } else if (numIntentos == 0) {
-      document.getElementById('imagen').src = 'img/ahorcado.png';
+    switch(numIntentos){
+      case 4:
+        document.getElementById('imagen').src = 'img/cabeza.png';
+        break;
+      case 3:
+        document.getElementById('imagen').src = 'img/cuerpo.png';
+        break;
+      case 2:
+        document.getElementById('imagen').src = 'img/piernas.png';
+        break;
+      case 1:
+        document.getElementById('imagen').src = 'img/brazos.png';
+        break;
+      case 0:
+        document.getElementById('imagen').src = 'img/ahorcado.png';
+        break;
     }
     document.getElementById("tecla" + letraUsuario).disabled = true;
     document.getElementById("tecla"+letraUsuario).className = "teclaDeshabilitada";
@@ -98,12 +108,15 @@ function estadoPartida(){
   
   if(!palabraMostrar.includes('_')){
     bloquearTodasTeclas();
+    document.getElementById('imagen').src = 'img/victoria.png';
+    botonReiniciar.textContent = "Siguiente";
     //Agregar imagen de victoria
     //Agregar boton para que se cargue una partida nueva
   }
   if(numIntentos==0){
     bloquearTodasTeclas();
     palabraMostrar= palabraAdivinar;
+    botonReiniciar.textContent = "Siguiente";
     //Agregar un boton para que continue jugando
   }
 }
@@ -126,6 +139,7 @@ function reiniciarPartida(){
   palabraMostrar = [];
   numIntentos = numIntentosTotales;
   puntuacion = 0;
+  botonReiniciar.textContent = "Reiniciar";
   document.getElementById('imagen').src = 'img/estructura.png';
 
   for (var i = 0; i < teclasBloqueadas.length; i++) {
@@ -137,6 +151,26 @@ function reiniciarPartida(){
   iniciarPartida();
 }
 
+
+formUI.addEventListener('submit', function(event){
+  event.preventDefault();
+  let nombre = document.getElementById('name').value;
+
+
+  let item = {
+    nombre: nombre,
+    puntaje: puntuacion
+  }
+  partidas.push(item);
+  localStorage.setItem('partida', JSON.stringify(partidas));
+  formUI.reset();
+  
+});
+
+
 iniciarPartida();
+
+
+
 
 
