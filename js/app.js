@@ -13,8 +13,8 @@ let intentos = document.querySelector('#intentos');
 let intentosOriginales= document.querySelector('#intentosOriginales');
 let puntuacionH2 = document.querySelector('#puntuacionH2');
 let botonReiniciar = document.querySelector('#BotonReiniciar');
-const formUIsave = document.getElementById('form');
-const formUIrestart = document.getElementById('form2');
+const formUIsave = document.getElementById('formSave');
+const formUIrestart = document.getElementById('formRestart');
 
 
 function iniciarPartida(){
@@ -133,29 +133,26 @@ function reiniciarPartida(){
 
 formUIsave.addEventListener('submit', function(event){
   event.preventDefault();
-  let nombre = document.getElementById('name').value;
-
-  console.log(nombre);
+  let nombre = document.getElementById('nameSave').value;
   localStorage.setItem(nombre,puntuacion);
   formUIsave.reset();
   
 });
 
-function setGame(){
-
-}
 
 formUIrestart.addEventListener('submit', function(event){
   event.preventDefault();
-  let nombre = document.getElementById('name2').value;
-  console.log(nombre);
+  document.getElementById('notificacion').style.visibility = "visible";
+  let nombre = document.getElementById('nameRestart').value;
 
   if(localStorage.getItem(nombre)!=null){
-    document.getElementById('aviso').innerHTML= "Su ultima puntuacion fue de: "+
+    document.getElementById('notificacion').innerHTML= "Su ultima puntuacion fue de: "+
     localStorage.getItem(nombre);
   }
-  formUIrestart.reset();
-  
+  else{
+    document.getElementById('notificacion').innerHTML= "No se encontro ninguna partida asociada con ese nombre ";
+  }
+  formUIrestart.reset();  
 });
 
 

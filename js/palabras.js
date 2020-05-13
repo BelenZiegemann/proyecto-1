@@ -1,7 +1,6 @@
 const listaPistas=[
     'Saga de películas',
     'Saga de Películas',
-    'Saga de Películas',
     'Animal',
     'Juego de cartas',
     'Guía sobre algo',
@@ -10,7 +9,6 @@ const listaPistas=[
     'Canción Queen',
     'Médico especializado en las enfermedades de la cabeza y del cuello',
     'Especialista en el uso del electroencefalograma',
-    'Músculo que está situado en el cuello y tiene la función de permitir el giro y la inclinación lateral de la cabeza',
     'Sólido limitado por seis paralelogramos, cuyas caras opuestas son iguales y paralelas',
     'De la fotosíntesis o que tiene relación con este proceso químico de las plantas',
     'Falta de ánimo o de disposición',
@@ -23,7 +21,6 @@ const listaPistas=[
     'Sustancias químicas que matan insectos y otras plagas',
     'Grupo de islas más o menos próximas entre sí',
     'Ladera expuesta al viento',
-    'Con escurrimiento que no alcanza a llegar al mar',
     'Escurrimiento superficial que desemboca en el mar',
     'Relativo a los lugares donde existen condiciones de aridez',
     'Sinónimo de Glaciar',
@@ -41,8 +38,7 @@ const listaPistas=[
 
 
 const listaPalabras=[
-    'Star wars',
-    'El Señor de Los Anillos',      
+    'Star wars',   
     'Transformers' ,
     'Ornitorrinco', 
     'Poker', 
@@ -52,7 +48,6 @@ const listaPalabras=[
     'Bohemian Rhapsody', 
     'Otorrinolaringologo',
     'Electroencefalografista',
-    'Esternocleidomastoideo', 
     'Paralelepipedo',
     'Fotosinteticamente',
     'Desidia',
@@ -66,7 +61,6 @@ const listaPalabras=[
     'Archipielago',
     'Barlovento',
     'Endorreica',
-    'Exorreica',
     'Xeromorfico',
     'Ventisquero',
     'Septentrional',

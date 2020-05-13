@@ -27,4 +27,5 @@ function abrirPartidas() {
 function cerrarPartidas() {
     document.getElementById("emergente").style.visibility = "hidden";
     document.getElementById("restartGame").style.visibility = "hidden";
+    document.getElementById("notificacion").style.visibility = "hidden";
 }

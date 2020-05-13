@@ -69,7 +69,7 @@
              <p>Las teclas se iran deshabilitando segun sean presionadas.</p>
              <p>
              En todo momento puedes darle al botón "Reiniciar" para empezar una nueva partida, al igual que cuando
-             ganes tienes que pulsar el botón "Siguiente".
+             ganes tienes que pulsar el botón "Siguiente" para continuar el juego.
             </p>
              <p>
              En caso de que le des a "Reiniciar" tu puntuación se restablecerá.
@@ -78,9 +78,9 @@
         </div>
         <div id="saveGame">
             <h1>Guardar partida</h1>
-            <p>Si desea guardar la partida, debera ingresar un nombre</p>
-            <form class = "form" id= "form">
-                <input type="text" id="name"  placeholder= "Nombre" pattern = "[A-Za-z]{2,15}" required><br>
+            <p>Si desea guardar la puntuacion de esta partida, debera ingresar un nombre</p>
+            <form class = "form" id= "formSave">
+                <input type="text" id="nameSave"  placeholder= "Nombre" pattern = "[A-Za-z]{2,15}" required><br>
                 <button type= "submit" class="boton" >Guardar partida</button>
             </form>
             <button class="boton" onclick="cerrarGuardar();">Cerrar</button>    
@@ -88,11 +88,11 @@
         <div id= "restartGame">
             <h1>Buscar partida</h1>
             <p>Ingrese el nombre con el que almaceno los puntos de su partida</p>
-            <form class = "form" id="form2">
-                <input type="text" id="name2" placeholder = "Nombre" pattern = "[A-Za-z]{2,15}"required><br>
+            <form class = "form" id="formRestart">
+                <input type="text" id="nameRestart" placeholder = "Nombre" pattern = "[A-Za-z]{2,15}"required><br>
                 <button type= "submit" class="boton" >Aceptar</button>
             </form>
-            <h2 id= aviso></h2>
+            <p id= "notificacion"></p>
             <button class="boton" onclick="cerrarPartidas();">Cerrar</button>
         </div>
         <footer class="footer">
