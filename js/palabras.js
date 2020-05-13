@@ -82,9 +82,6 @@ const listaPalabras=[
 ];
 
 
-/*NDODONCISTA: Un dentista que se especializa en el tratamiento de conducto.
-EXODONCIA: La extracción de un diente por un dentista.*/
-
 
 
   
