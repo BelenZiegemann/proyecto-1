@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/emergente.css">
+    <link rel="stylesheet" href="css/animaciones.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Pavanam&display=swap" rel="stylesheet">
 <body>
     <div class="contenedor">
         <section class="seccion">
@@ -73,18 +73,27 @@
             </p>
              <p>
              En caso de que le des a "Reiniciar" tu puntuación se restablecerá.
-             </p>
-             <button class="boton" onclick="cerrarInstrucciones();">Cerrar</button>
+            </p>
+            <button class="boton" onclick="cerrarInstrucciones();">Cerrar</button>
         </div>
-        <div id="partida">
+        <div id="saveGame">
             <h1>Guardar partida</h1>
             <p>Si desea guardar la partida, debera ingresar un nombre</p>
             <form class = "form" id= "form">
-                <input type="text" id="name" name="username" placeholder= "Nombre" required><br>
-                <button type= "submit" class="boton" id= "hecho">Guardar partida</button>
+                <input type="text" id="name"  placeholder= "Nombre" pattern = "[A-Za-z]{2,15}" required><br>
+                <button type= "submit" class="boton" >Guardar partida</button>
             </form>
-            <button class="boton" onclick="cerrarGuardar();">Cerrar</button>
-            
+            <button class="boton" onclick="cerrarGuardar();">Cerrar</button>    
+        </div>
+        <div id= "restartGame">
+            <h1>Buscar partida</h1>
+            <p>Ingrese el nombre con el que almaceno los puntos de su partida</p>
+            <form class = "form" id="form2">
+                <input type="text" id="name2" placeholder = "Nombre" pattern = "[A-Za-z]{2,15}"required><br>
+                <button type= "submit" class="boton" >Aceptar</button>
+            </form>
+            <h2 id= aviso></h2>
+            <button class="boton" onclick="cerrarPartidas();">Cerrar</button>
         </div>
         <footer class="footer">
             <div>
@@ -95,6 +104,9 @@
             </div>
             <div>
                 <button class="boton" onclick="abrirGuardar();">Guardar</button>
+            </div>
+            <div>
+                <button class="boton" onclick="abrirPartidas();">Partidas</button>
             </div>
         </footer>
     </div>

@@ -1,0 +1,38 @@
+#emergente {
+	background-color: rgba(47, 47, 47, 0.39);
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	visibility: hidden;
+	width: 100%;
+	z-index: 2;
+}
+
+#instrucciones, #saveGame, #restartGame {
+	background-color:  #FDD998;
+	border:solid #4d3e3e;
+	border-radius: 10px 10px 10px 10px;
+	left: 29%;
+	padding: 1% 2%;
+	position: absolute;
+	top: 19%;
+	visibility: hidden;
+	width: 37%;
+	z-index: 3;
+	text-align: center;
+}
+
+#instrucciones h1, #saveGame h1, #restartGame h1,h2{
+	color: black;
+	font-family: 'Gudea', sans-serif;
+	font-size: 20px;
+}
+  
+ #instrucciones p, #saveGame p, #restartGame p{
+	font-family: 'Gudea', sans-serif;
+}
+

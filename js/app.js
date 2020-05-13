@@ -1,7 +1,5 @@
-/*
-Proyecto perteneciente a la materia Ingenieria de 
-de Aplicaciones Web. Universidad Nacional del Sur. 
-*/ 
+/*Proyecto perteneciente a la materia Ingenieria de 
+de Aplicaciones Web. Universidad Nacional del Sur. */ 
 
 let puntuacion = 0; 
 let numIntentos = 5;
@@ -15,9 +13,8 @@ let intentos = document.querySelector('#intentos');
 let intentosOriginales= document.querySelector('#intentosOriginales');
 let puntuacionH2 = document.querySelector('#puntuacionH2');
 let botonReiniciar = document.querySelector('#BotonReiniciar');
-const formUI = document.getElementById('form');
-let partidas = [];
-
+const formUIsave = document.getElementById('form');
+const formUIrestart = document.getElementById('form2');
 
 
 function iniciarPartida(){
@@ -37,12 +34,9 @@ function iniciarPartida(){
     }
   }
   console.log(palabraMostrar);
-
   pista.textContent = listaPistas[posicionAleatoria];
   intentosOriginales.textContent = numIntentosTotales;
-
   actualizarDatosPantalla();
-
 }
 
 
@@ -51,13 +45,6 @@ function actualizarDatosPantalla(){
   palabra.textContent = palabraMostrar.join(' ').toUpperCase();
   intentos.textContent = numIntentos;
   puntuacionH2.textContent = puntuacion + " PUNTOS";
-}
-
-function capturarTecladoFisico(evObject){
-
-  var capturado = String.fromCharCode(evObject.which);
-  if(!teclasBloqueadas.includes("tecla"+capturado))
-    comprobarTecla(capturado);
 }
 
 function comprobarTecla(letraUsuario){
@@ -71,29 +58,28 @@ function comprobarTecla(letraUsuario){
       puntuacion+=25;
     }
   }
-
   if (!palabraAdivinar.includes(letraUsuario)) {
     if (numIntentos > 0) {
       numIntentos -= 1;
       puntuacion -= 15;
     }
     
-    switch(numIntentos){
-      case 4:
-        document.getElementById('imagen').src = 'img/cabeza.png';
-        break;
-      case 3:
-        document.getElementById('imagen').src = 'img/cuerpo.png';
-        break;
-      case 2:
-        document.getElementById('imagen').src = 'img/piernas.png';
-        break;
-      case 1:
-        document.getElementById('imagen').src = 'img/brazos.png';
-        break;
-      case 0:
-        document.getElementById('imagen').src = 'img/ahorcado.png';
-        break;
+  switch(numIntentos){
+    case 4:
+      document.getElementById('imagen').src = 'img/cabeza.png';
+      break;
+    case 3:
+      document.getElementById('imagen').src = 'img/cuerpo.png';
+      break;
+    case 2:
+      document.getElementById('imagen').src = 'img/piernas.png';
+      break;
+    case 1:
+      document.getElementById('imagen').src = 'img/brazos.png';
+      break;
+    case 0:
+      document.getElementById('imagen').src = 'img/ahorcado.png';
+      break;
     }
     document.getElementById("tecla" + letraUsuario).disabled = true;
     document.getElementById("tecla"+letraUsuario).className = "teclaDeshabilitada";
@@ -101,7 +87,6 @@ function comprobarTecla(letraUsuario){
   }
   estadoPartida();
   actualizarDatosPantalla();
-
 }
 
 function estadoPartida(){
@@ -110,18 +95,13 @@ function estadoPartida(){
     bloquearTodasTeclas();
     document.getElementById('imagen').src = 'img/victoria.png';
     botonReiniciar.textContent = "Siguiente";
-    //Agregar imagen de victoria
-    //Agregar boton para que se cargue una partida nueva
   }
   if(numIntentos==0){
     bloquearTodasTeclas();
     palabraMostrar= palabraAdivinar;
     botonReiniciar.textContent = "Siguiente";
-    //Agregar un boton para que continue jugando
   }
 }
-
-
 
 function bloquearTodasTeclas(){
 
@@ -146,24 +126,35 @@ function reiniciarPartida(){
     document.getElementById(teclasBloqueadas[i]).disabled = false;
     document.getElementById(teclasBloqueadas[i]).className = "tecla";
   }
-
   teclasBloqueadas = [];
   iniciarPartida();
 }
 
 
-formUI.addEventListener('submit', function(event){
+formUIsave.addEventListener('submit', function(event){
   event.preventDefault();
   let nombre = document.getElementById('name').value;
 
+  console.log(nombre);
+  localStorage.setItem(nombre,puntuacion);
+  formUIsave.reset();
+  
+});
 
-  let item = {
-    nombre: nombre,
-    puntaje: puntuacion
+function setGame(){
+
+}
+
+formUIrestart.addEventListener('submit', function(event){
+  event.preventDefault();
+  let nombre = document.getElementById('name2').value;
+  console.log(nombre);
+
+  if(localStorage.getItem(nombre)!=null){
+    document.getElementById('aviso').innerHTML= "Su ultima puntuacion fue de: "+
+    localStorage.getItem(nombre);
   }
-  partidas.push(item);
-  localStorage.setItem('partida', JSON.stringify(partidas));
-  formUI.reset();
+  formUIrestart.reset();
   
 });
 

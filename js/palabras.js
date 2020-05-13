@@ -10,7 +10,7 @@ const listaPistas=[
     'Canción Queen',
     'Médico especializado en las enfermedades de la cabeza y del cuello',
     'Especialista en el uso del electroencefalograma',
-    ' Músculo que está situado en el cuello y tiene la función de permitir el giro y la inclinación lateral de la cabeza',
+    'Músculo que está situado en el cuello y tiene la función de permitir el giro y la inclinación lateral de la cabeza',
     'Sólido limitado por seis paralelogramos, cuyas caras opuestas son iguales y paralelas',
     'De la fotosíntesis o que tiene relación con este proceso químico de las plantas',
     'Falta de ánimo o de disposición',
@@ -31,7 +31,7 @@ const listaPistas=[
     'Sección baja o deprimida situada entre dos relieves mayores',
     'Depresiones pantanosas que abrigan una masa vegetacional característica',
     'Se refiere a las áreas donde las precipitaciones se concentran en invierno y donde el verano es seco',
-    'terreno  que hay entre cuencas vecinas',
+    'Terreno  que hay entre cuencas vecinas',
     'Especies adaptadas a zonas de alta humedad',
     'Aparato que mide el número de revoluciones de un eje móvil o de una máquina.',
     'Motor auxiliar que sirve para amplificar un esfuerzo relativamente pequeño y conseguir un trabajo considerable',
@@ -41,7 +41,7 @@ const listaPistas=[
 
 
 const listaPalabras=[
-    'star wars',
+    'Star wars',
     'El Señor de Los Anillos',      
     'Transformers' ,
     'Ornitorrinco', 
