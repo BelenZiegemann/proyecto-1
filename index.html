@@ -66,30 +66,32 @@
         <div id= "instrucciones">
             <h1>INSTRUCCIONES</h1>
              <p>Dispones de 5 intentos para acertar la palabra oculta.</p>
-             <p>Las teclas se iran deshabilitando segun sean presionadas.</p>
+             <p>Las teclas se iran deshabilitando según sean presionadas.</p>
              <p>
-             En todo momento puedes darle al botón "Reiniciar" para empezar una nueva partida, al igual que cuando
-             ganes tienes que pulsar el botón "Siguiente" para continuar el juego.
+             En todo momento podes presionar el botón "Reiniciar" para empezar una nueva partida. Del mismo modo que cuando
+             ganes o pierdas la misma, tendras que pulsar el botón "Siguiente" para continuar el juego.
             </p>
              <p>
-             En caso de que le des a "Reiniciar" tu puntuación se restablecerá.
+             En caso de presionar "Reiniciar" tu puntuación se restablecerá.
             </p>
+            <p>En caso de querer guardar la puntuación de una partida tendría que presionar en "Guardar".</p>
+            <p>Para consultar una puntuacion anterior deberás pulsar en "Partidas".</p>
             <button class="boton" onclick="cerrarInstrucciones();">Cerrar</button>
         </div>
         <div id="saveGame">
-            <h1>Guardar partida</h1>
+            <h1>GUARDAR PARTIDA</h1>
             <p>Si desea guardar la puntuacion de esta partida, debera ingresar un nombre</p>
             <form class = "form" id= "formSave">
-                <input type="text" id="nameSave"  placeholder= "Nombre" pattern = "[A-Za-z]{2,15}" required><br>
+                <input type="text" id="nameSave"  placeholder= "Nombre" pattern = "[A-Za-z]{3,15}" required><br>
                 <button type= "submit" class="boton" >Guardar partida</button>
             </form>
             <button class="boton" onclick="cerrarGuardar();">Cerrar</button>    
         </div>
         <div id= "restartGame">
-            <h1>Buscar partida</h1>
+            <h1>BUSCAR PARTIDA</h1>
             <p>Ingrese el nombre con el que almaceno los puntos de su partida</p>
             <form class = "form" id="formRestart">
-                <input type="text" id="nameRestart" placeholder = "Nombre" pattern = "[A-Za-z]{2,15}"required><br>
+                <input type="text" id="nameRestart" placeholder = "Nombre" pattern = "[A-Za-z]{3,15}"required><br>
                 <button type= "submit" class="boton" >Aceptar</button>
             </form>
             <p id= "notificacion"></p>
