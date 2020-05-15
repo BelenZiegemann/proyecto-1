@@ -26,7 +26,7 @@
 	text-align: center;
 }
 
-#instrucciones h1, #saveGame h1, #restartGame h1{
+#instrucciones h1,h2, #saveGame h1, #restartGame h1{
 	color: black;
 	font-family: 'Gudea', sans-serif;
 	font-size: 20px;
